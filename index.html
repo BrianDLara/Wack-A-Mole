@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer src="app.js" charset="utf-8"></script>
+    <title>Wack-A-Mole</title>
+</head>
+
+<body>
+    <header>
+        <h1>Wack-A-Mole</h1>
+
+        <section id="player-score">
+            <h3>Score: <span class="x-score">0</span></h3>
+
+        </section>
+
+        <!-- pure DOM manipulation -->
+        <h2 id="current-status"></h2>
+    </header>
+    <section class="container">
+        <!-- I added some border classes to only draw specific lines on the grid
+        I also gave all the grid slots a grid class of "grid" and a individual grid 
+        number with the attribute "grid-index"-->
+        <div class="cell" cell-index="0"></div>
+        <div class="cell" cell-index="1"></div>
+        <div class="cell" grid-index="2"></div>
+        <div class="cell" cell-index="3"></div>
+        <div class="cell" cell-index="4"></div>
+        <div class="cell" cell-index="5"></div>
+
+
+    </section>
+
+    <footer>
+        <!-- Will use eventListener -->
+        <button id="restart-button">Restart</button>
+    </footer>
+</body>
+
+</html>
