@@ -6,8 +6,13 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    text-align: center;
+
+    background-image: url(https://opengameart.org/sites/default/files/grass_template2_0.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 h1 {
@@ -18,22 +23,18 @@ h1 {
 
 .container {
     display: grid;
-    grid-template-columns: 200px 200px 200px;
-    grid-template-rows: 150px 150px;
-    margin: 1em;
-
-
+    grid-template-columns: 250px 250px 250px;
+    grid-template-rows: 200px 200px;
+    margin: 5rem;
 }
 
 .cell {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 90px;
+    border: 3px solid black;
+    border-radius: 70%;
+    background-color: #BC815F;
+
     cursor: pointer;
-    padding-bottom: 10px;
-    border: 1px solid black;
-    border-radius: 60%;
+
 }
 
 .cell:hover,
@@ -67,10 +68,4 @@ button {
     border: none;
     color: white;
     cursor: pointer;
-}
-
-#player-score {
-    display: flex;
-    align-items: flex-end;
-    justify-content: end;
 }

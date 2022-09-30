@@ -13,31 +13,20 @@
 <body>
     <header>
         <h1>Wack-A-Mole</h1>
-
-        <section id="player-score">
-            <h3>Score: <span class="x-score">0</span></h3>
-
-        </section>
-
-        <!-- pure DOM manipulation -->
-        <h2 id="current-status"></h2>
     </header>
+    <section>
+        <h2 id="live-status">sdss</h2>
+        <h3>Score: <span id="player-score">0</span></h3>
+    </section>
     <section class="container">
-        <!-- I added some border classes to only draw specific lines on the grid
-        I also gave all the grid slots a grid class of "grid" and a individual grid 
-        number with the attribute "grid-index"-->
         <div class="cell cell-top" cell-index="1"></div>
         <div class="cell cell-top" cell-index="2"></div>
         <div class="cell cell-top" grid-index="3"></div>
         <div class="cell cell-bottom" cell-index="4"></div>
         <div class="cell cell-bottom" cell-index="5"></div>
-
-
-
     </section>
 
     <footer>
-        <!-- Will use eventListener -->
         <button id="restart-button">Restart</button>
     </footer>
 </body>
