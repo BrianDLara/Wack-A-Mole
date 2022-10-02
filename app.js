@@ -7,7 +7,7 @@ let cellArray = Array.from(cells);
 let playerScore = document.querySelector('#player-score');
 let score = 0;
 let time = null
-
+let wackMole;
 
 
 
@@ -18,28 +18,39 @@ const randomMole = () =>{
     })
     let random = cells[Math.floor(Math.random()*5)]
     random.classList.add('mole')
+    wackMole = random.id
+
 }
 
 const moleTimer = () => {
-    time = setInterval(randomMole, 500)
+    time = setInterval(randomMole, 1000)
+}
+
+
+const addScore = () => {
+  
+    score ++
+    playerScore.innerText = score
 }
 
 const startGame = () => {
     moleTimer()
-    
     cells.forEach(cell => cell.addEventListener('click', function(){
-        if(score < 5){
-            score += 1
-            playerScore.innerText = score 
+        if(cell.id ===  wackMole && score < 3) { 
+            addScore()
+        }else if (score === 3){
+            youWin()
         }
         
-       
-        
-        
-    }))
+        //     score += 1
+        //     playerScore.innerText = score 
+        // }
+}))
 }
 
+
 startGame()
+
 
 
 

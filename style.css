@@ -37,10 +37,6 @@ h1 {
 
 }
 
-.cell:hover,
-button:hover {
-    background-color: #e673008f;
-}
 
 .cell-top {
     margin: 2rem 1rem 1rem 1rem;
@@ -67,8 +63,4 @@ button {
     border: none;
     color: white;
     cursor: pointer;
-}
-
-.mole {
-    background-color: blue;
 }
