@@ -8,6 +8,7 @@ let playerScore = document.querySelector('#player-score');
 let score = 0;
 let time = null;
 let stopClick = false
+let lastCell;
 let wackMole;
 
 
@@ -22,13 +23,18 @@ const randomMole = () =>{
     stopClick = false;
     //randomized the mole appearance
     let random = cells[Math.floor(Math.random()*5)];
+    if(random === lastCell){
+       return randomMole();
+        
+    }
     random.classList.add('mole');
     wackMole = random.id;
-
+    lastCell = random
+    return random;
 }
 
 const moleTimer = () => {
-    time = setInterval(randomMole, 750);
+    time = setInterval(randomMole, 1500);
 }
 
 const youWin = () => {
