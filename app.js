@@ -26,6 +26,14 @@ const moleTimer = () => {
     time = setInterval(randomMole, 1000)
 }
 
+const youWin = () => {
+    liveStatus.innerText = `You Win!`
+    clearInterval(time)
+    cells.forEach(cell => {
+        cell.classList.remove('mole')
+    })
+
+}
 
 const addScore = () => {
   
