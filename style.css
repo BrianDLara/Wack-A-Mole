@@ -16,9 +16,17 @@ body {
 }
 
 h1 {
+    font-family: 'MaceriamPutri', sans-serif;
     margin: .2em 1em;
     padding: .5em 1em .1em 1em;
-    font-size: 70px;
+    font-size: 75px;
+    color: #634432;
+}
+
+h2,
+h3 {
+    color: #e8e0d5;
+    font-size: 40px;
 }
 
 .container {
@@ -31,7 +39,7 @@ h1 {
 .cell {
     border: 3px solid black;
     border-radius: 70%;
-    background-color: #BC815F;
+    background-color: #8c5f45;
 
     cursor: pointer;
 
@@ -67,5 +75,10 @@ button {
 
 .mole {
     background-image: url('../images/mole.png');
+    background-size: cover;
+}
+
+.mole:active {
+    background-image: url('../images/mole2.png');
     background-size: cover;
 }
