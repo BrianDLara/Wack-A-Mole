@@ -23,24 +23,27 @@ const randomMole = () =>{
     stopClick = false;
     //randomized the mole appearance
     let random = cells[Math.floor(Math.random()*5)];
+   // if the last randomized cell equals to the new random cell, it will return and run the function randomMole() again
     if(random === lastCell){
        return randomMole();
-        
     }
+    //adding the class .mole to the id's in the html document
     random.classList.add('mole');
     wackMole = random.id;
+    
+    // stores the last randomized cell into the variable lastCell
     lastCell = random
     return random;
 }
 
-const moleTimer = () => {
+const moleMoveSpeed = () => {
     time = setInterval(randomMole, 1500);
 }
 
 const youWin = () => {
     liveStatus.innerText = `You Win!`;
-    clearInterval(time);
     //cleans the game after a win
+    clearInterval(time);
     cells.forEach(cell => {
         cell.classList.remove('mole');
     })
@@ -48,26 +51,34 @@ const youWin = () => {
 }
 
 const addScore = () => {
-    score ++;
+    score += 10;
+    console.log('score')
     playerScore.innerText = score;
+    // stops player from cheating and adding multiple points from the same cell
     stopClick = true;
 
 }
 
 const startGame = () => {
     liveStatus.innerText = `Hit 10 Moles To Win`;
-    moleTimer();
-    cells.forEach(cell => cell.addEventListener('click', function(){
-        if(cell.id ===  wackMole && score < 10) { 
+    moleMoveSpeed();
+    cells.forEach(cell => {
+        cell.addEventListener('click', function(){
+        if(cell.id ===  wackMole && score < 100) { 
+            // if stopClick is true, it will return and prevent from adding more points from the same cell
             if(stopClick){
                 return;
             } 
             addScore();
-        }else if (score === 10){
+        }
+        
+        if (score === 100){
             youWin();
         }
-}))
+    })})
+    
 }
+
 
 
 startGame()
