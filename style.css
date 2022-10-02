@@ -64,3 +64,13 @@ button {
     color: white;
     cursor: pointer;
 }
+
+.mole {
+    background-image: url('mole.png');
+    background-size: cover;
+}
+
+.mole:active {
+    background-image: url('mole2.png');
+    background-size: cover;
+}
