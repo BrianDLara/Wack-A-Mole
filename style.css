@@ -74,9 +74,12 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #e67300c5;
+}
+
 .levels {
-    display: inline-block;
-    flex-direction: row;
+    display: inline-flex;
     margin-top: 5rem;
 }
 
@@ -85,6 +88,18 @@ button {
     flex-direction: column;
     margin: 0 5rem;
 }
+
+.game-image {
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #634432;
+    font-weight: bold;
+}
+
 
 
 
