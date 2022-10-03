@@ -30,9 +30,20 @@ h3 {
     font-size: 40px;
 }
 
+h3 {
+    margin: 0 6rem;
+}
+
 .container {
     display: grid;
     grid-template-columns: 250px 250px 250px;
+    grid-template-rows: 200px 200px;
+    margin: 2rem;
+}
+
+.container-hard {
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px;
     grid-template-rows: 200px 200px;
     margin: 2rem;
 }
@@ -121,8 +132,4 @@ button:hover {
     justify-content: space-between;
     margin-top: 20px;
 
-}
-
-#player-score {
-    margin-right: 500px;
 }

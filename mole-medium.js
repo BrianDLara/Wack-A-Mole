@@ -129,7 +129,7 @@ const randomMole = () =>{
 }
 
 const moleMoveSpeed = () => {
-    switchSpeed = setInterval(randomMole, 800);
+    switchSpeed = setInterval(randomMole, 900);
 }
 
 const countDown = () => {

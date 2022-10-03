@@ -1,8 +1,6 @@
 //Global Variables
 const liveStatus = document.querySelector('#live-status');
 const seconds = document.querySelector('#seconds');
-const playerScore = document.querySelector('#player-score');
-const hiScore = document.querySelector('#hi-score');
 const restartButton = document.querySelector('#restart-button');
 const cells = document.querySelectorAll('.cell');
 const mole = document.querySelector('.mole');
@@ -17,17 +15,17 @@ backgroundMusic.volume = 0.2;
 backgroundMusic.loop = true;
 
 let cellArray = Array.from(cells);
-let highestScore = 0;
+let playerScore = document.querySelector('#player-score');
 let score = 0;
-let time = 30;
-seconds.innerText = 30;
-let currentlyPlaying = false
 let switchSpeed = null;
+let currentlyPlaying = false
 let stopClick = false
 let lastCell;
 let wackMole;
+let time = 10;
 let startCountDown;
 
+seconds.innerText = 10;
 
 
 
@@ -41,12 +39,15 @@ const startGame = () => {
     moleMoveSpeed();
     cells.forEach(cell => {
         cell.addEventListener('click', function(){
-            if(cell.id ===  wackMole) { 
+            if(cell.id ===  wackMole && score < 100) { 
                 // if stopClick is true, it will return and prevent from adding more points from the same cell
                 if(stopClick){
                     return;
                 } 
                 addScore();
+            }
+            if (score === 100){
+                youWin();
             }
         })
     })
@@ -63,8 +64,7 @@ const addScore = () => {
 const youWin = () => {
     backgroundMusic.pause()
     winSound.play()
-    liveStatus.innerText = `Time Is Up!`;
-    hiScoreCount()
+    liveStatus.innerText = `You Win!`;
     //cleans the game after a win
     clearInterval(switchSpeed);
     clearInterval(startCountDown)
@@ -79,8 +79,8 @@ const restart = () => {
     clearInterval(switchSpeed);
     clearInterval(startCountDown)
     score = 0;
-    time = 30;
-    seconds.innerText = 30;
+    time = 10;
+    seconds.innerText = 10;
     playerScore.innerText = score;
     
     cells.forEach(cell => {
@@ -129,7 +129,7 @@ const randomMole = () =>{
 }
 
 const moleMoveSpeed = () => {
-    switchSpeed = setInterval(randomMole, 1000);
+    switchSpeed = setInterval(randomMole, 900);
 }
 
 const countDown = () => {
@@ -138,16 +138,8 @@ const countDown = () => {
 	seconds.innerText = time;
     }
     if(time === 0){
-        youWin();
+        gameOver();
     }
-}
-
-const hiScoreCount = () => {
-    if(score > highestScore ){
-        highestScore = score
-        hiScore.innerText = score
-    }
-    return highestScore
 }
 
 

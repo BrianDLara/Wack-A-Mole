@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/maceriamlapide" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer src="time-attack.js" charset="utf-8"></script>
+    <title>Wack-A-Mole - Time Attack</title>
+</head>
+
+<body>
+    <header>
+        <h1>Wack-A-Mole - Time Attack</h1>
+    </header>
+    <section>
+        <h2 id="live-status"></h2>
+        <div id="counters">
+            <h3>Score: <span id="player-score">0</span></h3>
+            <h3>Time: <span id="seconds"></span></h3>
+            <h3>Hi-Score: <span id="hi-score">0</span></h3>
+        </div>
+    </section>
+    <section class="container-hard">
+        <div class="cell cell-top" id="1"></div>
+        <div class="cell cell-top" id="2"></div>
+        <div class="cell cell-top" id="3"></div>
+        <div class="cell cell-top" id="4"></div>
+        <div class="cell cell-middle" id="5"></div>
+        <div class="cell cell-middle" id="6"></div>
+        <div class="cell cell-middle" id="7"></div>
+        <div class="cell cell-bottom" id="8"></div>
+        <div class="cell cell-bottom" id="9"></div>
+        <div class="cell cell-bottom" id="10"></div>
+        <div class="cell cell-bottom" id="11"></div>
+    </section>
+
+    <footer>
+        <button id="restart-button">Restart</button>
+    </footer>
+</body>
+
+</html>
