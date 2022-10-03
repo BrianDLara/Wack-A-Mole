@@ -51,7 +51,6 @@
 ![image](https://i.imgur.com/7YzYolR.png)
 
 > #### **Video Preview (Under Development - *content subject to change*)**
-[Imgur](https://imgur.com/DezKzSw)
 
 
 ### **_Task Lists_** :clipboard:
