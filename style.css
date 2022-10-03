@@ -34,7 +34,7 @@ h3 {
     display: grid;
     grid-template-columns: 250px 250px 250px;
     grid-template-rows: 200px 200px;
-    margin: 5rem;
+    margin: 2rem;
 }
 
 .cell {
@@ -49,17 +49,22 @@ h3 {
 
 .cell-top {
     margin: 2rem 1rem 1rem 1rem;
+    grid-row: 1;
+}
 
-
+.cell-middle {
+    display: flex;
+    position: relative;
+    left: 8rem;
+    margin: 2rem 1rem 1rem 1rem;
+    grid-row: 2;
 }
 
 .cell-bottom {
-    display: flex;
     position: relative;
-    left: 7rem;
+    grid-row: 3;
     margin: 2rem 1rem 1rem 1rem;
-    justify-content: space-between;
-
+    padding: 4.7rem;
 
 }
 
@@ -67,10 +72,11 @@ button {
     margin: 2em;
     padding: .3em 1em;
     font-size: 20px;
+    color: #634432;
+    font-weight: bold;
     background-color: #e67300;
     border-radius: 5px;
     border: none;
-    color: white;
     cursor: pointer;
 }
 
@@ -94,11 +100,6 @@ button:hover {
     border-radius: 20px;
 }
 
-a {
-    text-decoration: none;
-    color: #634432;
-    font-weight: bold;
-}
 
 
 
