@@ -74,6 +74,21 @@ button {
     cursor: pointer;
 }
 
+.levels {
+    display: inline-block;
+    flex-direction: row;
+    margin-top: 5rem;
+}
+
+.level-image {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5rem;
+}
+
+
+
+/* Game css */
 .mole {
     background-image: url('../images/mole.png');
     background-size: cover;
@@ -88,9 +103,10 @@ button {
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 20px;
 
 }
 
 #player-score {
-    margin-right: 650px;
+    margin-right: 500px;
 }
