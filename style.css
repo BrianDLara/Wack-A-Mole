@@ -25,6 +25,7 @@ h1 {
 
 h2,
 h3 {
+    font-family: 'Minecraftia', sans-serif;
     color: #e8e0d5;
     font-size: 40px;
 }
@@ -81,4 +82,15 @@ button {
 .mole:active {
     background-image: url('../images/mole2.png');
     background-size: cover;
+}
+
+#counters {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#player-score {
+    margin-right: 650px;
 }

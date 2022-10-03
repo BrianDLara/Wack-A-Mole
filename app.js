@@ -1,31 +1,45 @@
 //Global Variables
 const liveStatus = document.querySelector('#live-status');
-const cells = document.querySelectorAll('.cell');
+const seconds = document.querySelector('#seconds');
 const restartButton = document.querySelector('#restart-button');
+const cells = document.querySelectorAll('.cell');
 const mole = document.querySelector('.mole');
 
 //Mole got hit audio
-const boink = new Audio('../music/boings_jews-harp-7153.mp3');
-
+const boinkSound = new Audio('../music/boink.mp3');
+const winSound = new Audio('../music/win.mp3');
+const loseSound = new Audio('../music/game-over.mp3');
+loseSound.volume = 0.2;
+const backgroundMusic = new Audio('../music/background-music.mp3');
+backgroundMusic.volume = 0.2;
+backgroundMusic.loop = true;
 
 let cellArray = Array.from(cells);
 let playerScore = document.querySelector('#player-score');
 let score = 0;
-let time = null;
+let switchSpeed = null;
+let currentlyPlaying = false
 let stopClick = false
 let lastCell;
 let wackMole;
+let time = 15;
+let startCountDown;
+
+seconds.innerText = 15;
 
 
 
 
 //functions
 const startGame = () => {
-    liveStatus.innerText = `Hit 10 Moles To Win`;
+    currentlyPlaying = true
+    backgroundMusic.play()
+    liveStatus.innerText = `Reach 100 Point To Win`;
+    startCountDown = setInterval(countDown, 1000);
     moleMoveSpeed();
     cells.forEach(cell => {
         cell.addEventListener('click', function(){
-            boink.play();
+            boinkSound.play();
             if(cell.id ===  wackMole && score < 100) { 
                 // if stopClick is true, it will return and prevent from adding more points from the same cell
                 if(stopClick){
@@ -38,6 +52,59 @@ const startGame = () => {
             }
         })
     })
+}
+
+const addScore = () => {
+    score += 10;
+    playerScore.innerText = score;
+    // stops player from cheating and adding multiple points from the same cell
+    stopClick = true;
+}
+
+const youWin = () => {
+    backgroundMusic.pause()
+    winSound.play()
+    liveStatus.innerText = `You Win!`;
+    //cleans the game after a win
+    clearInterval(switchSpeed);
+    clearInterval(startCountDown)
+    cells.forEach(cell => {
+        cell.classList.remove('mole');
+    })
+}
+
+const restart = () => {
+    currentlyPlaying = false;
+    backgroundMusic.pause()
+    clearInterval(switchSpeed);
+    clearInterval(startCountDown)
+    score = 0;
+    time = 15;
+    seconds.innerText = 15;
+    playerScore.innerText = score;
+    
+    cells.forEach(cell => {
+        cell.classList.remove('mole');
+    })
+    startGame()
+}
+
+const gameOver = () => {
+    currentlyPlaying = false;
+    liveStatus.innerText = `You Lose`;
+    clearInterval(switchSpeed);
+    clearInterval(startCountDown)
+    cells.forEach(cell => {
+        cell.classList.remove('mole');
+    })
+    
+    backgroundMusic.pause();
+    loseSound.play();
+    playAgain()
+}
+
+const playAgain = () => {
+    restartButton.innerText = `Play Again`;
 }
 
 const randomMole = () =>{
@@ -62,28 +129,30 @@ const randomMole = () =>{
 }
 
 const moleMoveSpeed = () => {
-    time = setInterval(randomMole, 1500);
+    switchSpeed = setInterval(randomMole, 1000);
 }
 
-const youWin = () => {
-    liveStatus.innerText = `You Win!`;
-    //cleans the game after a win
-    clearInterval(time);
-    cells.forEach(cell => {
-        cell.classList.remove('mole');
-    })
+const countDown = () => {
+    if(time > 0){ 
+    time--;
+	seconds.innerText = time;
+    }
+    if(time === 0){
+        gameOver();
+    }
 }
 
-const addScore = () => {
-    score += 10;
-    console.log('score')
-    playerScore.innerText = score;
-    // stops player from cheating and adding multiple points from the same cell
-    stopClick = true;
-}
 
+
+
+
+
+restartButton.addEventListener('click', restart);
 //called functions
-startGame()
+startGame();
+
+
+
 
 
 
