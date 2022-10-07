@@ -10,13 +10,21 @@
 
 ### **_Description_**
 
-#### Created a Wack-A-Mole game. Coming features will include level difficulty
+#### Created a Wack-A-Mole game. Your goal is to wack all the moles before time runs out.
+
+**Deployment Link:** [Surge](http://www.wam-game.surge.sh)
 
 ---
 
 ### **_Technologies_**
 
   - github
+
+  - gimp (image  editor)
+
+  - audacity (music editor)
+
+  - screen cast (screen recorder)
 
 - VS Code
   - Vanilla JavaScript
@@ -28,15 +36,13 @@
 
 ### **_Getting Started_**
 
-#### Create a github repo.
+#### - Follow the Surge link where the game was deployed.
 
-#### Fork and clone the repo
+#### - You will arrive at the welcome page. You will have to chose your difficulty level.
 
-#### Open the repo with vs code
+#### - once the game starts, click on the moles to wack them, and earn a points.
 
-#### Create a pseudo code to get my ideas in order
-
-#### make a presentable working version
+#### - Earn enough points to win the game
 
 ---
 
@@ -55,8 +61,8 @@ https://user-images.githubusercontent.com/96392130/193488022-8d13f66b-c413-4547-
 
 
 ### **_Task Lists_** :clipboard:
-- [ ] Make difficulty levels
-- [ ] Make a welcome page
+- [ ] Make multiple levels
+- [x] Make a welcome page
 - [x] Add a reset button tha doesn't reset the page
 - [x] prevent user input after win
 - [x] Add a score counter
